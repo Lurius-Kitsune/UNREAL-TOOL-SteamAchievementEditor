@@ -7,6 +7,8 @@
 
 ## ✨ Overview
 
+![SteamAchievementEditor Preview](https://via.placeholder.com/800x200?text=SteamAchievementEditor+Preview)
+
 **SteamAchievementEditor** is an Unreal Engine editor tool designed to **centralize**, **simplify**, and **streamline** the configuration of **Steam achievements** directly on the Unreal side.
 
 The tool provides a clean and efficient workflow to manage achievement creation, editing, and activation without manually handling configuration files.
@@ -39,14 +41,18 @@ Earlier Unreal Engine versions are **not supported**.
 ## 🧩 How It Works
 
 * Achievements are created and edited through the **SteamAchievementEditor UI**
+
 * Clicking **Apply** will:
+
   * Add it to the generated configuration if set to binded to it.
-  
+
 * Unbound achievements:
+
   * Will **not** appear in the configuration file
   * Are ignored safely at runtime
 
 * Ease activation:
+
   * Functional BP Node and C++ Async to use with the configurated data Assets
 
 This ensures a clean and reliable setup aligned with Steam requirements.
