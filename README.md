@@ -7,7 +7,7 @@
 
 ## ✨ Overview
 
-![SteamAchievementEditor Preview](https://via.placeholder.com/800x200?text=SteamAchievementEditor+Preview)
+![SteamAchievementEditor Preview](screenshot.png)
 
 **SteamAchievementEditor** is an Unreal Engine editor tool designed to **centralize**, **simplify**, and **streamline** the configuration of **Steam achievements** directly on the Unreal side.
 
