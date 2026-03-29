@@ -27,7 +27,8 @@ public class SteamAchivementActivator : ModuleRules
 			{
 				"Core",
                 "OnlineSubsystem",
-				"OnlineSubsystemUtils"
+				"OnlineSubsystemUtils",
+                "Steamworks"
             }
 			);
 			

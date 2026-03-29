@@ -23,14 +23,28 @@ USteamAchievementUnlocker* USteamAchievementUnlocker::UpdateAchivement(APlayerCo
 {
 	TObjectPtr< USteamAchievementUnlocker> _this = NewObject<USteamAchievementUnlocker>();
 	_this->playerController = _playerController;
-	_this->achievementData = _achievementData;
+	_this->steamAchievementId = _achievementData->steamAPIName;
 	_this->progression = _progress;
 	return _this;
+}
+
+USteamAchievementUnlocker* USteamAchievementUnlocker::UpdateAchivementById(APlayerController* _playerController, FString _steamAchievementId, float _progress)
+{
+    TObjectPtr< USteamAchievementUnlocker> _this = NewObject<USteamAchievementUnlocker>();
+    _this->playerController = _playerController;
+    _this->steamAchievementId = _steamAchievementId;
+    _this->progression = _progress;
+    return _this;
 }
 
 USteamAchievementUnlocker* USteamAchievementUnlocker::UnlockAchievement(APlayerController* _playerController, UAchievementData* _achievementData, bool _unlockState)
 {
     return UpdateAchivement(_playerController, _achievementData, _unlockState ? 1.f : -1.f);
+}
+
+USteamAchievementUnlocker* USteamAchievementUnlocker::UnlockAchievementById(APlayerController* _playerController, FString _steamAchievementId, bool _unlockState)
+{
+    return UpdateAchivementById(_playerController, _steamAchievementId, _unlockState ? 1.f : -1.f);
 }
 
 void USteamAchievementUnlocker::UpdateAchievementInternal()
@@ -42,7 +56,7 @@ void USteamAchievementUnlocker::UpdateAchievementInternal()
     if (!_achievements.IsValid()) return;
 
     FOnlineAchievementsWritePtr _writeObject = MakeShareable(new FOnlineAchievementsWrite());
-    _writeObject->SetFloatStat(achievementData->steamAPIName, 100.0f);
+    _writeObject->SetFloatStat(steamAchievementId, 100.0f);
 
 
     FUniqueNetIdPtr _userId = playerController->PlayerState->GetUniqueId().GetUniqueNetId();

@@ -33,7 +33,7 @@ public:
 public:
 	virtual void Activate() override;
 
-	UFUNCTION(BlueprintCallable, Category = "Achievements", meta = (BlueprintInternalUseOnly = true))
+	UFUNCTION(BlueprintCallable, Category = "Steam|Achievements", meta = (BlueprintInternalUseOnly = true))
 	static USteamAchievementQueryAsync* QueryAchievements(APlayerController* _playerController);
 private:
 	void QueryAchievementsInternal();

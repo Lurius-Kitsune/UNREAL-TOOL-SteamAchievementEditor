@@ -27,7 +27,14 @@ public:
     FText displayName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Achievement")
+	FString statsNameId;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Achievement")
+	float maxValueStats;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Achievement")
 	EAchivementType achivementType = EAchivementType::AT_BoolAchivement;
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Achievement")
 	bool isBinded = false;
